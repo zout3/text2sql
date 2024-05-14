@@ -1,0 +1,35 @@
+
+CREATE TABLE track (
+	`TrackId` INTEGER NOT NULL, 
+	`Name` VARCHAR(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL, 
+	`AlbumId` INTEGER, 
+	`MediaTypeId` INTEGER NOT NULL, 
+	`GenreId` INTEGER, 
+	`Composer` VARCHAR(220) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`Milliseconds` INTEGER NOT NULL, 
+	`Bytes` INTEGER, 
+	`UnitPrice` DECIMAL(10, 2) NOT NULL, 
+	PRIMARY KEY (`TrackId`), 
+	CONSTRAINT `FK_TrackAlbumId` FOREIGN KEY(`AlbumId`) REFERENCES album (`AlbumId`), 
+	CONSTRAINT `FK_TrackGenreId` FOREIGN KEY(`GenreId`) REFERENCES genre (`GenreId`), 
+	CONSTRAINT `FK_TrackMediaTypeId` FOREIGN KEY(`MediaTypeId`) REFERENCES mediatype (`MediaTypeId`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci
+
+/*
+3 rows from track table:
+TrackId	Name	AlbumId	MediaTypeId	GenreId	Composer	Milliseconds	Bytes	UnitPrice
+1	For Those About To Rock (We Salute You)	1	1	1	Angus Young, Malcolm Young, Brian Johnson	343719	11170334	0.99
+2	Balls to the Wall	2	2	1	U. Dirkschneider, W. Hoffmann, H. Frank, P. Baltes, S. Kaufmann, G. Hoffmann	342562	5510424	0.99
+3	Fast As a Shark	3	2	1	F. Baltes, S. Kaufman, U. Dirkscneider & W. Hoffman	230619	3990994	0.99
+*/
+
+Sampled values for each column
+TrackId : (1,), (6,), (7,), (8,), (9,), (10,), (11,), (12,), (13,), (14,)
+Name : ('For Those About To Rock (We Salute You)',), ('Balls to the Wall',), ('Fast As a Shark',), ('Restless and Wild',), ('Princess of the Dawn',), ('Put The Finger On You',), ("Let's Get It Up",), ('Inject The Venom',), ('Snowballed',), ('Evil Walks',)
+AlbumId : (1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,)
+MediaTypeId : (1,), (2,), (3,), (4,), (5,)
+GenreId : (1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,)
+Composer : ('Angus Young, Malcolm Young, Brian Johnson',), ('U. Dirkschneider, W. Hoffmann, H. Frank, P. Baltes, S. Kaufmann, G. Hoffmann',), ('F. Baltes, S. Kaufman, U. Dirkscneider & W. Hoffman',), ('F. Baltes, R.A. Smith-Diesel, S. Kaufman, U. Dirkscneider & W. Hoffman',), ('Deaffy & R.A. Smith-Diesel',), ('AC/DC',), ('Steven Tyler, Joe Perry, Jack Blades, Tommy Shaw',), ('Steven Tyler, Joe Perry',), ('Steven Tyler, Joe Perry, Jim Vallance, Holly Knight',), ('Steven Tyler, Joe Perry, Desmond Child',)
+Milliseconds : (343719,), (342562,), (230619,), (252051,), (375418,), (205662,), (233926,), (210834,), (203102,), (263497,)
+Bytes : (11170334,), (5510424,), (3990994,), (4331779,), (6290521,), (6713451,), (7636561,), (6852860,), (6599424,), (8611245,)
+UnitPrice : (Decimal('0.99'),), (Decimal('1.99'),)

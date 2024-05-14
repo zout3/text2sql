@@ -1,0 +1,18 @@
+
+CREATE TABLE artist (
+	`ArtistId` INTEGER NOT NULL, 
+	`Name` VARCHAR(120) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	PRIMARY KEY (`ArtistId`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci
+
+/*
+3 rows from artist table:
+ArtistId	Name
+1	AC/DC
+2	Accept
+3	Aerosmith
+*/
+
+Sampled values for each column
+ArtistId : (1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,)
+Name : ('AC/DC',), ('Accept',), ('Aerosmith',), ('Alanis Morissette',), ('Alice In Chains',), ('Antônio Carlos Jobim',), ('Apocalyptica',), ('Audioslave',), ('BackBeat',), ('Billy Cobham',)

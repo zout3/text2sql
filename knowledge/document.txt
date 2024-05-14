@@ -1,0 +1,20 @@
+[Albums]: Represents albums in the music store. Contains attributes such as [AlbumId], [Title], and [ArtistId].
+[Artists]: Stores information about music artists. Attributes include [ArtistId] and [Name].
+[Customers]: Contains details about the customers of the music store, including attributes like [CustomerId], [FirstName], [LastName], [Email], [Phone], [Address], [City], [State], [Country], and [PostalCode].
+[Employees]: Represents employees of the music store. Attributes include [EmployeeId], [LastName], [FirstName], [Title], [ReportsTo] (to denote the employee's manager), [BirthDate], [HireDate], [Address], [City], [State], [Country], [PostalCode], and [Phone].
+[Genres]: Stores music genres. Attributes comprise [GenreId] and [Name].
+[Invoice_Items]: Represents line items of invoices. Contains attributes like [InvoiceLineId], [InvoiceId], [TrackId], [UnitPrice], and [Quantity].
+[Invoices]: Stores invoice information. Attributes include [InvoiceId], [CustomerId], [InvoiceDate], [BillingAddress], [BillingCity], [BillingState], [BillingCountry], and [BillingPostalCode].
+[Media_Types]: Represents different types of media available in the store. Attributes include [MediaTypeId] and [Name].
+[Playlists]: Contains playlists created by customers. Attributes comprise [PlaylistId] and [Name].
+[Playlist_Track]: Represents the association between [tracks] and [playlists]. Contains attributes like [PlaylistId] and [TrackId].
+[Tracks]: Stores information about tracks available in the store. Attributes include [TrackId], [Name], [AlbumId], [MediaTypeId], [GenreId], [Composer], [Milliseconds] (duration), [Bytes], and [UnitPrice].
+
+[Albums] to [Artists]: One artist can have multiple albums.
+[Employees] to [Employees] (ReportsTo): Employees have a hierarchical relationship denoted by the manager-employee association.
+[Customers] to [Invoices]: Each customer can have multiple invoices.
+[Invoices] to [Invoice_Items]: Each invoice can have multiple line items.
+[Tracks] to [Albums]: Each album can have multiple tracks.
+[Tracks] to [Genres]: Each track can belong to one genre.
+[Tracks] to [Media_Types]: Each track is associated with one media type.
+[Playlists] to [Tracks]: Multiple tracks can belong to multiple playlists.

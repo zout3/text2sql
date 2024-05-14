@@ -1,0 +1,21 @@
+
+CREATE TABLE album (
+	`AlbumId` INTEGER NOT NULL, 
+	`Title` VARCHAR(160) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL, 
+	`ArtistId` INTEGER NOT NULL, 
+	PRIMARY KEY (`AlbumId`), 
+	CONSTRAINT `FK_AlbumArtistId` FOREIGN KEY(`ArtistId`) REFERENCES artist (`ArtistId`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci
+
+/*
+3 rows from album table:
+AlbumId	Title	ArtistId
+1	For Those About To Rock We Salute You	1
+2	Balls to the Wall	2
+3	Restless and Wild	2
+*/
+
+Sampled values for each column
+AlbumId : (1,), (4,), (2,), (3,), (5,), (6,), (7,), (8,), (34,), (9,)
+Title : ('For Those About To Rock We Salute You',), ('Balls to the Wall',), ('Restless and Wild',), ('Let There Be Rock',), ('Big Ones',), ('Jagged Little Pill',), ('Facelift',), ('Warner 25 Anos',), ('Plays Metallica By Four Cellos',), ('Audioslave',)
+ArtistId : (1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,)

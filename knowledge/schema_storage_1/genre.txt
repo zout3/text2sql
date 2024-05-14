@@ -1,0 +1,18 @@
+
+CREATE TABLE genre (
+	`GenreId` INTEGER NOT NULL, 
+	`Name` VARCHAR(120) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	PRIMARY KEY (`GenreId`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci
+
+/*
+3 rows from genre table:
+GenreId	Name
+1	Rock
+2	Jazz
+3	Metal
+*/
+
+Sampled values for each column
+GenreId : (1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,)
+Name : ('Rock',), ('Jazz',), ('Metal',), ('Alternative & Punk',), ('Rock And Roll',), ('Blues',), ('Latin',), ('Reggae',), ('Pop',), ('Soundtrack',)

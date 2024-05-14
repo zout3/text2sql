@@ -1,0 +1,33 @@
+
+CREATE TABLE invoice (
+	`InvoiceId` INTEGER NOT NULL, 
+	`CustomerId` INTEGER NOT NULL, 
+	`InvoiceDate` DATETIME NOT NULL, 
+	`BillingAddress` VARCHAR(70) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`BillingCity` VARCHAR(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`BillingState` VARCHAR(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`BillingCountry` VARCHAR(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`BillingPostalCode` VARCHAR(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`Total` DECIMAL(10, 2) NOT NULL, 
+	PRIMARY KEY (`InvoiceId`), 
+	CONSTRAINT `FK_InvoiceCustomerId` FOREIGN KEY(`CustomerId`) REFERENCES customer (`CustomerId`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci
+
+/*
+3 rows from invoice table:
+InvoiceId	CustomerId	InvoiceDate	BillingAddress	BillingCity	BillingState	BillingCountry	BillingPostalCode	Total
+1	2	2021-01-01 00:00:00	Theodor-Heuss-Straße 34	Stuttgart	None	Germany	70174	1.98
+2	4	2021-01-02 00:00:00	Ullevålsveien 14	Oslo	None	Norway	0171	3.96
+3	8	2021-01-03 00:00:00	Grétrystraat 63	Brussels	None	Belgium	1000	5.94
+*/
+
+Sampled values for each column
+InvoiceId : (98,), (121,), (143,), (195,), (316,), (327,), (382,), (1,), (12,), (67,)
+CustomerId : (1,), (2,), (3,), (4,), (5,), (6,), (7,), (8,), (9,), (10,)
+InvoiceDate : (datetime.datetime(2021, 1, 1, 0, 0),), (datetime.datetime(2021, 1, 2, 0, 0),), (datetime.datetime(2021, 1, 3, 0, 0),), (datetime.datetime(2021, 1, 6, 0, 0),), (datetime.datetime(2021, 1, 11, 0, 0),), (datetime.datetime(2021, 1, 19, 0, 0),), (datetime.datetime(2021, 2, 1, 0, 0),), (datetime.datetime(2021, 2, 2, 0, 0),), (datetime.datetime(2021, 2, 3, 0, 0),), (datetime.datetime(2021, 2, 6, 0, 0),)
+BillingAddress : ('Theodor-Heuss-Straße 34',), ('Ullevålsveien 14',), ('Grétrystraat 63',), ('8210 111 ST NW',), ('69 Salem Street',), ('Berger Straße 10',), ('Barbarossastraße 19',), ('8, Rue Hanovre',), ('9, Place Louis Barthou',), ('3 Chatham Street',)
+BillingCity : ('Stuttgart',), ('Oslo',), ('Brussels',), ('Edmonton',), ('Boston',), ('Frankfurt',), ('Berlin',), ('Paris',), ('Bordeaux',), ('Dublin',)
+BillingState : (None,), ('AB',), ('MA',), ('Dublin',), ('CA',), ('WA',), ('NV',), ('WI',), ('NS',), ('NSW',)
+BillingCountry : ('Germany',), ('Norway',), ('Belgium',), ('Canada',), ('USA',), ('France',), ('Ireland',), ('United Kingdom',), ('Australia',), ('Chile',)
+BillingPostalCode : ('70174',), ('0171',), ('1000',), ('T6G 2C7',), ('2113',), ('60316',), ('10779',), ('75002',), ('33000',), (None,)
+Total : (Decimal('1.98'),), (Decimal('3.96'),), (Decimal('5.94'),), (Decimal('8.91'),), (Decimal('13.86'),), (Decimal('0.99'),), (Decimal('6.94'),), (Decimal('17.91'),), (Decimal('18.86'),), (Decimal('21.86'),)

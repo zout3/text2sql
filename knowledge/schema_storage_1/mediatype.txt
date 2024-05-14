@@ -1,0 +1,18 @@
+
+CREATE TABLE mediatype (
+	`MediaTypeId` INTEGER NOT NULL, 
+	`Name` VARCHAR(120) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	PRIMARY KEY (`MediaTypeId`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci
+
+/*
+3 rows from mediatype table:
+MediaTypeId	Name
+1	MPEG audio file
+2	Protected AAC audio file
+3	Protected MPEG-4 video file
+*/
+
+Sampled values for each column
+MediaTypeId : (1,), (2,), (3,), (4,), (5,)
+Name : ('MPEG audio file',), ('Protected AAC audio file',), ('Protected MPEG-4 video file',), ('Purchased AAC audio file',), ('AAC audio file',)

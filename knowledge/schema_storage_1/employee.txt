@@ -1,0 +1,45 @@
+
+CREATE TABLE employee (
+	`EmployeeId` INTEGER NOT NULL, 
+	`LastName` VARCHAR(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL, 
+	`FirstName` VARCHAR(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL, 
+	`Title` VARCHAR(30) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`ReportsTo` INTEGER, 
+	`BirthDate` DATETIME, 
+	`HireDate` DATETIME, 
+	`Address` VARCHAR(70) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`City` VARCHAR(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`State` VARCHAR(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`Country` VARCHAR(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`PostalCode` VARCHAR(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`Phone` VARCHAR(24) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`Fax` VARCHAR(24) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	`Email` VARCHAR(60) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci, 
+	PRIMARY KEY (`EmployeeId`), 
+	CONSTRAINT `FK_EmployeeReportsTo` FOREIGN KEY(`ReportsTo`) REFERENCES employee (`EmployeeId`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_0900_ai_ci
+
+/*
+3 rows from employee table:
+EmployeeId	LastName	FirstName	Title	ReportsTo	BirthDate	HireDate	Address	City	State	Country	PostalCode	Phone	Fax	Email
+1	Adams	Andrew	General Manager	None	1962-02-18 00:00:00	2002-08-14 00:00:00	11120 Jasper Ave NW	Edmonton	AB	Canada	T5K 2N1	+1 (780) 428-9482	+1 (780) 428-3457	andrew@chinookcorp.com
+2	Edwards	Nancy	Sales Manager	1	1958-12-08 00:00:00	2002-05-01 00:00:00	825 8 Ave SW	Calgary	AB	Canada	T2P 2T3	+1 (403) 262-3443	+1 (403) 262-3322	nancy@chinookcorp.com
+3	Peacock	Jane	Sales Support Agent	2	1973-08-29 00:00:00	2002-04-01 00:00:00	1111 6 Ave SW	Calgary	AB	Canada	T2P 5M5	+1 (403) 262-3443	+1 (403) 262-6712	jane@chinookcorp.com
+*/
+
+Sampled values for each column
+EmployeeId : (1,), (2,), (6,), (3,), (4,), (5,), (7,), (8,)
+LastName : ('Adams',), ('Edwards',), ('Peacock',), ('Park',), ('Johnson',), ('Mitchell',), ('King',), ('Callahan',)
+FirstName : ('Andrew',), ('Nancy',), ('Jane',), ('Margaret',), ('Steve',), ('Michael',), ('Robert',), ('Laura',)
+Title : ('General Manager',), ('Sales Manager',), ('Sales Support Agent',), ('IT Manager',), ('IT Staff',)
+ReportsTo : (None,), (1,), (2,), (6,)
+BirthDate : (datetime.datetime(1962, 2, 18, 0, 0),), (datetime.datetime(1958, 12, 8, 0, 0),), (datetime.datetime(1973, 8, 29, 0, 0),), (datetime.datetime(1947, 9, 19, 0, 0),), (datetime.datetime(1965, 3, 3, 0, 0),), (datetime.datetime(1973, 7, 1, 0, 0),), (datetime.datetime(1970, 5, 29, 0, 0),), (datetime.datetime(1968, 1, 9, 0, 0),)
+HireDate : (datetime.datetime(2002, 8, 14, 0, 0),), (datetime.datetime(2002, 5, 1, 0, 0),), (datetime.datetime(2002, 4, 1, 0, 0),), (datetime.datetime(2003, 5, 3, 0, 0),), (datetime.datetime(2003, 10, 17, 0, 0),), (datetime.datetime(2004, 1, 2, 0, 0),), (datetime.datetime(2004, 3, 4, 0, 0),)
+Address : ('11120 Jasper Ave NW',), ('825 8 Ave SW',), ('1111 6 Ave SW',), ('683 10 Street SW',), ('7727B 41 Ave',), ('5827 Bowness Road NW',), ('590 Columbia Boulevard West',), ('923 7 ST NW',)
+City : ('Edmonton',), ('Calgary',), ('Lethbridge',)
+State : ('AB',)
+Country : ('Canada',)
+PostalCode : ('T5K 2N1',), ('T2P 2T3',), ('T2P 5M5',), ('T2P 5G3',), ('T3B 1Y7',), ('T3B 0C5',), ('T1K 5N8',), ('T1H 1Y8',)
+Phone : ('+1 (780) 428-9482',), ('+1 (403) 262-3443',), ('+1 (403) 263-4423',), ('1 (780) 836-9987',), ('+1 (403) 246-9887',), ('+1 (403) 456-9986',), ('+1 (403) 467-3351',)
+Fax : ('+1 (780) 428-3457',), ('+1 (403) 262-3322',), ('+1 (403) 262-6712',), ('+1 (403) 263-4289',), ('1 (780) 836-9543',), ('+1 (403) 246-9899',), ('+1 (403) 456-8485',), ('+1 (403) 467-8772',)
+Email : ('andrew@chinookcorp.com',), ('nancy@chinookcorp.com',), ('jane@chinookcorp.com',), ('margaret@chinookcorp.com',), ('steve@chinookcorp.com',), ('michael@chinookcorp.com',), ('robert@chinookcorp.com',), ('laura@chinookcorp.com',)
