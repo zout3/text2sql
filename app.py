@@ -135,7 +135,7 @@ if "chat_history" not in st.session_state:
 with st.sidebar:
     st.subheader("Settings")
     st.write("This is a chat application using MySQL. Connect to the database and start chatting")
-    db_url = "https://www.sqlitetutorial.net/sqlite-sample-database/"
+    db_url = "https://github.com/lerocha/chinook-database"
     st.link_button("Chinook Database", db_url)
     st.text_input("Host", value=st.secrets["DB_HOST"], key="Host")
     st.text_input("User", value=st.secrets["DB_USER"], key="User")
@@ -175,7 +175,7 @@ if "chat_status" not in st.session_state:
 
 
 
-user_input = st.chat_input("Which artist created the best-selling track?")
+user_input = st.chat_input("Which playlist contains the highest number of unique artists?")
 
 
 if user_input is not None and user_input.strip() != "":
