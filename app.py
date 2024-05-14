@@ -28,11 +28,6 @@ from prompts import (
     SQL_RESULT_OUTPUT_PROMPT
 )
 
-db_user = "zoutong"
-db_password = "12345678"
-db_host = "database-test.c9yauys4smfr.us-east-2.rds.amazonaws.com"
-db_name = "Chinook"
-
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 kg_path = './knowledge/'
 openai_model = "gpt-3.5-turbo"
@@ -140,10 +135,10 @@ if "chat_history" not in st.session_state:
 with st.sidebar:
     st.subheader("Settings")
     st.write("This is a chat application using MySQL. Connect to the database and start chatting")
-    st.text_input("Host", value=db_host, key="Host")
-    st.text_input("User", value=db_user, key="User")
-    st.text_input("Password", type=db_password, value="940719", key="Password")
-    st.text_input("Database", value=db_name, key="Database")
+    st.text_input("Host", value=st.secrets["DB_HOST"], key="Host")
+    st.text_input("User", value=st.secrets["DB_USER"], key="User")
+    st.text_input("Password", type=st.secrets["DB_PASSOWRD"], value="940719", key="Password")
+    st.text_input("Database", value=st.secrets["DB_NAME"], key="Database")
 
     if st.button("Start"):
         with st.spinner("Connecting to database..."):
