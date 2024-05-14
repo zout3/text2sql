@@ -137,7 +137,7 @@ with st.sidebar:
     st.write("This is a chat application using MySQL. Connect to the database and start chatting")
     st.text_input("Host", value=st.secrets["DB_HOST"], key="Host")
     st.text_input("User", value=st.secrets["DB_USER"], key="User")
-    st.text_input("Password", type="password", value=st.secrets["DB_PASSOWRD"], key="Password")
+    st.text_input("Password", type="password", value=st.secrets["DB_PASSWORD"], key="Password")
     st.text_input("Database", value=st.secrets["DB_NAME"], key="Database")
 
     if st.button("Start"):
