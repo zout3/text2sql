@@ -5,7 +5,7 @@ from langchain_openai import ChatOpenAI
 from langchain.chains import LLMChain
 import pymysql
 
-def init_database(user, password, host, port, database):
+def init_database(user, password, host, database):
     db_uri = f"mysql+pymysql://{user}:{password}@{host}/{database}"
     db_lc = sqldb_lc.from_uri(db_uri)
     db_li = sqldb_li.from_uri(db_uri)
