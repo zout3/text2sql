@@ -193,7 +193,7 @@ if user_input is not None and user_input.strip() != "":
         print("document:\n", document, "\n")
         
         classification = llm_generator(
-            model = openai_model,
+            model = "gpt-4",
             prompt = CLASSIFICATION_PROMPT,
             schema = schema,
             document = document,
